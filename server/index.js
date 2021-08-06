@@ -1,9 +1,12 @@
  
 const express = require('express');
-let app = express();
-let port = 3000;
+const app = express();
+const path = require('path');
 
-app.use(express.static(__dirname + '/../public'));
+const port = 3000;
+const DIR_NAME = path.resolve(__dirname, '..', 'public');
+
+app.use(express.static(DIR_NAME));
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
