@@ -1,0 +1,19 @@
+{
+  "name": "fullstack-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iraqwarvet31/fullstack-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iraqwarvet31/fullstack-todo/issues"
+  },
+  "homepage": "https://github.com/iraqwarvet31/fullstack-todo#readme"
+}
