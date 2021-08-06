@@ -1,7 +1,7 @@
  
 const express = require('express');
 const path = require('path');
-const connectMongoDB = require('./database/database');
+const connectMongoDB = require('./config/db.config');
 const app = express();
 
 const port = 3000;
