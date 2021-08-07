@@ -1,7 +1,10 @@
 import React from 'react';
 
 const App = () => (
-    <div>REACT TODO APP</div>
+    <div>
+        <h1>REACT TODO APP</h1>
+        <Todos />
+    </div>
 )
 
 export default App;
