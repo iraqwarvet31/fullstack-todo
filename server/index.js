@@ -27,6 +27,9 @@ mongoose
       console.log(err);
   })
 
+// import routes
+require('./routes/todo.routes')(app);
+
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
