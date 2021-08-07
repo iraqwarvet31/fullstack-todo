@@ -13,6 +13,14 @@ exports.createTodo = (req, res) => {
     });
     
     todo.save(todo)
-        .then((data) => res.status(200).send(data))
-        .catch((err) => res.status(500).send(err))
+        .then(() => res.sendStatus(200))
+        .catch((err) => res.status(500).send(err));
+}
+
+exports.deleteTodo = (req, res) => {
+    const { id } = req.params;
+
+    Todo.findByIdAndDelete(id)
+        .then(() => res.sendStatus(200))
+        .catch((err) => res.status(500).send(err));
 }

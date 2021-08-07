@@ -9,5 +9,8 @@ module.exports = app => {
     // add a todo
     router.post('/', todos.createTodo);
 
+    // Delete todo
+    router.delete('/:id', todos.deleteTodo);
+
     app.use('/api/todos', router);
 }
