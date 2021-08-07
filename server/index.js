@@ -1,13 +1,13 @@
  
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const connectMongoDB = require('./config/db.config');
+
 const app = express();
 
 const port = 3000;
 const DIR_NAME = path.resolve(__dirname, '..', 'public');
-
-require('dotenv').config();
 
 app.use(express.static(DIR_NAME));
 
