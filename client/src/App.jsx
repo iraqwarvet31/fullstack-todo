@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <h1>React Todo App</h1>
-      <Todos />
+      <Todos tasks={tasks} />
     </div>
   )
 }
