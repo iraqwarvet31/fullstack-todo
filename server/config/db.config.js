@@ -1,17 +1,21 @@
-const mongoose = require('mongoose');
+module.exports = {
+    url: 'URL',
+}
 
-const mongoURI = 'mongodb://localhost:27017/todoDB';
+// const mongoose = require('mongoose');
 
-const connectMongoDB = mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// const mongoURI = 'mongodb://localhost:27017/todoDB';
 
-connectMongoDB
-    .then(() => console.log(`Connected to: ${mongoURI}`))
-    .catch((err) => {
-        console.log(`There was a problem connecting to ${mongoURI}`);
-        console.log(err);
-    })
+// const connectMongoDB = mongoose.connect(mongoURI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
 
-module.exports = connectMongoDB;
+// connectMongoDB
+//     .then(() => console.log(`Connected to: ${mongoURI}`))
+//     .catch((err) => {
+//         console.log(`There was a problem connecting to ${mongoURI}`);
+//         console.log(err);
+//     })
+
+// module.exports = connectMongoDB;
