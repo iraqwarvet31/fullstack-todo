@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Todos from './Todos';
+import AddTodo from './AddTodo';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);

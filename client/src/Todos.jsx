@@ -1,11 +1,16 @@
 import React from 'react';
 
+import Todo from './Todo';
+
 const Todos = ({ tasks }) => {
-  const taskList = tasks.map((task) => (
-    <li key={task._id}>
-      <span>{task.task}</span>
-    </li>
-  ))
+  const taskList = tasks.map((item) => (
+    <Todo
+      key={item._id}
+      id={item._id}
+      task={item.task}
+    />
+  ));
+  
   return (
     <div>
       <ul>
