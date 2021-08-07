@@ -7,6 +7,8 @@ const app = express();
 const port = 3000;
 const DIR_NAME = path.resolve(__dirname, '..', 'public');
 
+require('dotenv').config();
+
 app.use(express.static(DIR_NAME));
 
 app.listen(port, function() {
