@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Todos from './Todos';
 import AddTodo from './AddTodo';
+import Loading from './Loading';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <div>
       <h1>React Todo App</h1>
+      <Loading />
       <Todos tasks={tasks} />
     </div>
   )
