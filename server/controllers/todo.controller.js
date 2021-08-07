@@ -11,8 +11,8 @@ exports.createTodo = (req, res) => {
         task: req.body.task,
         completed: req.body.completed
     });
-    console.log('todo')
-    // todo.save(todo)
-    //     .then(() => res.status(200).send(data))
-    //     .catch((err) => res.status(500).send(err))
+    
+    todo.save(todo)
+        .then((data) => res.status(200).send(data))
+        .catch((err) => res.status(500).send(err))
 }

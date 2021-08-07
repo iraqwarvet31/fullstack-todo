@@ -6,5 +6,8 @@ module.exports = app => {
     // Retrieve all todos
     router.get('/', todos.readAllTodos);
 
+    // add a todo
+    router.post('/', todos.createTodo);
+
     app.use('/api/todos', router);
 }
