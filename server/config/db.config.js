@@ -1,5 +1,5 @@
 module.exports = {
-    url: 'URL',
+    url: process.env.MONGO_URI,
 }
 
 // const mongoose = require('mongoose');
