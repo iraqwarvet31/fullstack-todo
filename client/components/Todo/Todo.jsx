@@ -13,7 +13,7 @@ const Todo = ({ id, task, fetchTodos }) => {
   }
 
   return (
-    <li>
+    <li className="list-item">
       <span>{task}</span>
       <span className="delete-icon" onClick={deleteTodo}> X</span>
     </li>
