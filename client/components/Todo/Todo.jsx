@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './Todo.css';
+
 const Todo = ({ id, task }) => {
   return (
     <li>
       <span>{task}</span>
-      <span> X</span>
+      <span className="delete-icon"> X</span>
     </li>
   )
 };
