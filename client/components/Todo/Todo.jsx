@@ -3,21 +3,11 @@ import axios from 'axios';
 
 import './Todo.css';
 
-const Todo = ({ id, task, fetchTodos }) => {
-  const deleteTodo = (e) => {
-    e.preventDefault();
-    
-    axios.delete(`/api/todos/${id}`)
-      .then(() => fetchTodos())
-      .catch((err) => console.log('Deletion failed'));
-  }
-
-  return (
-    <li className="list-item">
-      <span>{task}</span>
-      <span className="delete-icon" onClick={deleteTodo}> X</span>
-    </li>
-  )
-};
+const Todo = ({ task, deleteTodo }) => (
+  <li className="list-item">
+    <span>{task}</span>
+    <span className="delete-icon" onClick={deleteTodo}> X</span>
+  </li>
+);
 
 export default Todo;
