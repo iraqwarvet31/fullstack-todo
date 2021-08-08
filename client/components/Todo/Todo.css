@@ -6,3 +6,8 @@
   list-style-type: none;
   cursor: pointer;
 }
+
+.complete {
+  opacity: .2;
+  text-decoration: line-through;
+}

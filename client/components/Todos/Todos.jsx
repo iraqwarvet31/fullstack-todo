@@ -9,7 +9,7 @@ const Todos = () => {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState('');
   const [isLoading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -39,15 +39,20 @@ const Todos = () => {
       .catch((err) => console.log('Deletion failed'));
   }
 
-  const taskList = tasks.map((item) => (
-    <Todo
-      key={item._id}
-      id={item._id}
-      task={item.task}
-      deleteTodo={deleteTodo}
-    />
-  ));
-
+  // Create each todo list item and render only if NOT completed
+  const taskList = tasks.map((item) => {
+    if (!item.completed) {
+      return (
+        <Todo
+          key={item._id}
+          id={item._id}
+          task={item.task}
+          deleteTodo={deleteTodo}
+        />
+      )
+    }
+  });
+ 
   return (
     <div>
       <h1>React Todo App</h1>
