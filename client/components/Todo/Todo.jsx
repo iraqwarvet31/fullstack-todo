@@ -1,11 +1,15 @@
 import React from 'react';
+import axios from 'axios';
 
 import './Todo.css';
 
-const Todo = ({ id, task }) => {
+const Todo = ({ id, task, fetchTodos }) => {
   const deleteTodo = (e) => {
     e.preventDefault();
-    console.log(id)
+    
+    axios.delete(`/api/todos/${id}`)
+      .then(() => fetchTodos())
+      .catch((err) => console.log('Deletion failed'));
   }
 
   return (

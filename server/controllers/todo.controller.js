@@ -19,7 +19,7 @@ exports.createTodo = (req, res) => {
 
 exports.deleteTodo = (req, res) => {
     const { id } = req.params;
-
+   
     Todo.findByIdAndDelete(id)
         .then(() => res.sendStatus(200))
         .catch((err) => res.status(500).send(err));
