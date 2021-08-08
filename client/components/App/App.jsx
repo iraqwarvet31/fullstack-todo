@@ -32,7 +32,10 @@ const App = () => {
         task={task} 
         fetchTodos={fetchTodos}
       />
-      <Todos tasks={tasks} />
+      <Todos 
+        tasks={tasks} 
+        fetchTodos={fetchTodos}
+      />
     </div>
   )
 }
