@@ -9,7 +9,7 @@ exports.readAllTodos = (req, res) => {
 exports.createTodo = (req, res) => {
     const todo = new Todo({
         task: req.body.task,
-        completed: req.body.completed
+        completed: false,
     });
     
     todo.save(todo)
