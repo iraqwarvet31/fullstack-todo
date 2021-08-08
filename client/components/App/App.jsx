@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import Todos from './Todos';
-import AddTodo from './AddTodo';
-import Loading from './Loading';
+import Todos from '../Todos/Todos';
+import AddTodo from '../AddTodo/AddTodo';
+import Loading from '../Loading/Loading';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
