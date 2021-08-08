@@ -23,7 +23,7 @@ const Todos = () => {
       .catch((err) => console.log(err));
   }
 
-  const submitTodo = (e) => {
+  const createTodo = (e) => {
     e.preventDefault();
     
     axios.post('/api/todos', {task})
@@ -33,9 +33,7 @@ const Todos = () => {
       })
   };
 
-  const deleteTodo = (e) => {
-    e.preventDefault();
-    
+  const deleteTodo = (id) => {
     axios.delete(`/api/todos/${id}`)
       .then(() => fetchTodos())
       .catch((err) => console.log('Deletion failed'));
@@ -56,7 +54,7 @@ const Todos = () => {
       <AddTodo 
         setTask={setTask}
         task={task}
-        submitTodo={submitTodo}
+        createTodo={createTodo}
       />
       {isLoading && <Loading />}
       <ul>

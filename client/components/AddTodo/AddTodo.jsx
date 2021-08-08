@@ -1,8 +1,8 @@
 import React from 'react';
 
-const AddTodo = ({ setTask, task, submitTodo }) => (
+const AddTodo = ({ setTask, task, createTodo }) => (
   <div>
-    <form onSubmit={submitTodo} >
+    <form onSubmit={createTodo} >
       <input 
         placeholder="add Todo" 
         onChange={(e) => setTask(e.target.value)} 
