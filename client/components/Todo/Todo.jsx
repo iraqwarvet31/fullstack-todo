@@ -6,11 +6,16 @@ import { RiDeleteBin5Line as DeleteBtn } from 'react-icons/ri';
 
 import './Todo.css';
 
-const Todo = ({ task, deleteTodo, id }) => {
+const Todo = ({ task, item, deleteTodo, id, list, setCompleteTasks }) => {
   const [isComplete, setComplete] = useState(false);
 
   const toggleTasks = () => {
-    setComplete(val => !val);
+    if (!isComplete) {
+      setCompleteTasks([...list, item]);
+    } else {
+      setCompleteTasks(list.filter(ele => ele._id !== id))
+    }
+    setComplete(val => !val)
   }
 
   return (

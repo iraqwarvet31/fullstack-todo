@@ -8,6 +8,7 @@ import Loading from '../Loading/Loading';
 const Todos = () => {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState('');
+  const [list, setCompleteTasks] = useState([]);
   const [isLoading, setLoading] = useState(true);
   
   useEffect(() => {
@@ -47,7 +48,10 @@ const Todos = () => {
           key={item._id}
           id={item._id}
           task={item.task}
+          item={item}
           deleteTodo={deleteTodo}
+          list={list}
+          setCompleteTasks={setCompleteTasks}
         />
       )
     }
