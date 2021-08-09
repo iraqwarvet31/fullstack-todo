@@ -7,7 +7,6 @@ import Loading from '../Loading/Loading';
 
 const Todos = () => {
   const [tasks, setTasks] = useState([]);
-  const [task, setTask] = useState('');
   const [list, setCompleteTasks] = useState([]);
   const [isLoading, setLoading] = useState(true);
   
@@ -23,16 +22,6 @@ const Todos = () => {
       })
       .catch((err) => console.log(err));
   }
-
-  const createTodo = (e) => {
-    e.preventDefault();
-    
-    axios.post('/api/todos', {task})
-      .then(() => {
-        setTask('');
-        fetchTodos();
-      })
-  };
 
   const deleteTodo = (id) => {
     axios.delete(`/api/todos/${id}`)
@@ -59,12 +48,6 @@ const Todos = () => {
  
   return (
     <div>
-      <h1>React Todo App</h1>
-      <AddTodo 
-        setTask={setTask}
-        task={task}
-        createTodo={createTodo}
-      />
       {isLoading && <Loading />}
       <ul>
         { taskList }
