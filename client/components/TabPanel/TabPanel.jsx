@@ -1,14 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import { makeStyles } from '@material-ui/core/styles';
+import PhoneIcon from '@material-ui/icons/Phone';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
 
 import Todos from '../Todos/Todos';
 import Todo from '../Todo/Todo';
+
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+    maxWidth: 500,
+  },
+});
 
 const TabPanel = (props) => {
   const [tasks, setTasks] = useState([]);
   const [list, setCompleteTasks] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  
+
+  // Material-ui
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+ 
+  // fetch todos from db
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -22,6 +45,7 @@ const TabPanel = (props) => {
       .catch((err) => console.log(err));
   }
 
+  // Delete a todo from the db
   const deleteTodo = (id) => {
     axios.delete(`/api/todos/${id}`)
       .then(() => fetchTodos())
@@ -46,9 +70,16 @@ const TabPanel = (props) => {
   });
 
   return (
-    <div>
-      <Todos isLoading={isLoading} taskList={taskList} />
-    </div>
+    // <div>
+    //   <Todos isLoading={isLoading} taskList={taskList} />
+    // </div>
+    <Paper className={classes.root}>
+      <Tabs value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" centered>
+        <Tab label="Item One" />
+        <Tab label="Item Two" />
+        <Tab label="Item Three" />
+      </Tabs>
+    </Paper>
   )
 }
 
