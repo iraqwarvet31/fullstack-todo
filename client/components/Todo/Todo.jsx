@@ -9,14 +9,14 @@ import './Todo.css';
 const Todo = ({ task, deleteTodo, id }) => {
   const [isComplete, setComplete] = useState(false);
 
-  const crossOutTodo = () => {
+  const toggleTasks = () => {
     setComplete(val => !val);
   }
 
   return (
     <li 
       className={isComplete ? 'complete list-item' : 'list-item'} 
-      onClick={crossOutTodo}
+      onClick={toggleTasks}
     >
       <span>{task}</span>
       <DeleteBtn
