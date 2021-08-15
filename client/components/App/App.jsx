@@ -1,14 +1,14 @@
 import React from "react";
 
 import AddTodo from '../AddTodo/AddTodo';
-import TabPanel from "../TabPanel/TabPanel";
+import NavTabs from '../Tabs/NavTabs';
 
 const App = () => {
   return (
     <div>
       <h1>React Todo App</h1>
       <AddTodo  />
-      <TabPanel />
+      <NavTabs />
     </div>
   )
 };
