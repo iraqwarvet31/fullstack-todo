@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Tabs from "@material-ui/core/Tabs";
 import AppBar from "@material-ui/core/AppBar";
 import Tab from "@material-ui/core/Tab";
@@ -26,6 +27,32 @@ function a11yProps(index) {
 }
 
 const NavTabs = (props) => {
+  const [tasks, setTasks] = useState([]);
+  const [completedTasks, setCompleteTasks] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
+  // fetch todos from db
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+
+  const fetchTodos = () => {
+    axios
+      .get("/api/todos")
+      .then((res) => {
+        setTasks(res.data);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  // Delete a todo from the db
+  const deleteTodo = (id) => {
+    axios
+      .delete(`/api/todos/${id}`)
+      .then(() => fetchTodos())
+      .catch((err) => console.log("Deletion failed"));
+  };
 
   // Material-ui
   const classes = useStyles();
@@ -53,7 +80,13 @@ const NavTabs = (props) => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Todos />
+        <Todos
+          tasks={tasks}
+          isLoading={isLoading}
+          deleteTodo={deleteTodo}
+          completedTasks={completedTasks}
+          setCompleteTasks={setCompleteTasks}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
