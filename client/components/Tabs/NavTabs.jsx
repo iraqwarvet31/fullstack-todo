@@ -9,6 +9,7 @@ import TabPanel from "./TabPanel";
 
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
+import RestoreFromTrashIcon from '@material-ui/icons/RestoreFromTrash';
 
 import Todos from "../Todos/Todos";
 
@@ -70,13 +71,13 @@ const NavTabs = (props) => {
           onChange={handleChange}
           aria-label="simple tabs example"
         >
-          <Tab icon={<ListAltIcon />} label="Current Todos" {...a11yProps(0)} />
+          <Tab icon={<ListAltIcon />} label="Current" {...a11yProps(0)} />
           <Tab
             icon={<PlaylistAddCheckIcon />}
-            label="Item Two"
+            label="Completed"
             {...a11yProps(1)}
           />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab icon={<RestoreFromTrashIcon />} label="Deleted" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
