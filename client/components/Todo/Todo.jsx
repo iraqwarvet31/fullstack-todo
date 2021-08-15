@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { AiTwotoneEdit as EditBtn } from "react-icons/ai";
-import { RiDeleteBin5Line as DeleteBtn } from "react-icons/ri";
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import EditIcon from '@material-ui/icons/Edit';
 
 import "./Todo.css";
 
@@ -33,8 +33,8 @@ const Todo = ({
       onClick={toggleTasks}
     >
       <span>{task}</span>
-      <DeleteBtn className="delete-icon" onClick={() => deleteTodo(id)} />
-      <EditBtn />
+      <DeleteOutlineIcon className="delete-icon" onClick={() => deleteTodo(id)} />
+      <EditIcon />
     </li>
   );
 };

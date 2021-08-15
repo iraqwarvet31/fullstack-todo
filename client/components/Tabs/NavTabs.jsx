@@ -12,6 +12,7 @@ import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
 import RestoreFromTrashIcon from '@material-ui/icons/RestoreFromTrash';
 
 import Todos from "../Todos/Todos";
+import CompletedTodos from "../Todos/CompletedTodos";
 
 const useStyles = makeStyles({
   root: {
@@ -90,7 +91,7 @@ const NavTabs = (props) => {
         />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <CompletedTodos completedTasks={completedTasks} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
