@@ -6,7 +6,7 @@ import Todo from "../Todo/Todo";
 
 const Todos = () => {
   const [tasks, setTasks] = useState([]);
-  const [list, setCompleteTasks] = useState([]);
+  const [completedTasks, setCompleteTasks] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
   // fetch todos from db
@@ -41,7 +41,7 @@ const Todos = () => {
           task={item.task}
           item={item}
           deleteTodo={deleteTodo}
-          list={list}
+          completedTasks={completedTasks}
           setCompleteTasks={setCompleteTasks}
         />
       );

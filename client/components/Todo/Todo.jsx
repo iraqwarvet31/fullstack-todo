@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 import { AiTwotoneEdit as EditBtn } from 'react-icons/ai';
 import { RiDeleteBin5Line as DeleteBtn } from 'react-icons/ri';
 
 import './Todo.css';
 
-const Todo = ({ task, item, deleteTodo, id, list, setCompleteTasks }) => {
+const Todo = ({ task, item, deleteTodo, id, completedTasks, setCompleteTasks }) => {
   const [isComplete, setComplete] = useState(false);
 
   const toggleTasks = () => {
     if (!isComplete) {
-      setCompleteTasks([...list, item]);
+      setCompleteTasks([...completedTasks, item]);
     } else {
-      setCompleteTasks(list.filter(ele => ele._id !== id))
+      setCompleteTasks(completedTasks.filter(ele => ele._id !== id))
     }
     setComplete(val => !val)
   }
